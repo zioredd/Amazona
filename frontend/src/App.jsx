@@ -1,21 +1,24 @@
-// import { Link } from 'react-dom'
-import './App.css'
+import "./index.css";
+import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import HomeScreen from "./screens/HomeScreen";
+import ProductScreen from "./screens/ProductScreen";
 
 function App() {
   return (
-    <div>
-      <header className="header">
-        <a href="/">amazona</a>
-      </header>
-      <main>
-        <div>
-          List group
-        </div>
-      </main>
-    </div>
-  )
+    <BrowserRouter>
+      <div>
+        <header>
+          <Link to="/">amazona</Link>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/product/:slug" element={<ProductScreen />} />
+            <Route path="/" element={<HomeScreen />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
+  );
 }
 
-export default App
-
-
+export default App;
