@@ -33,6 +33,10 @@ main {
   max-width: 250px;
 }
 
+.product-info {
+  margin: 1rem;
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
