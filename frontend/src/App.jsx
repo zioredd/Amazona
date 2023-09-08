@@ -1,3 +1,4 @@
+// import "./index.css";
 import "./index.css";
 import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
@@ -19,7 +20,7 @@ function App() {
           </Navbar>
         </header>
         <main>
-          <Container>
+          <Container className="mt-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
               <Route path="/" element={<HomeScreen />} />
