@@ -1,5 +1,5 @@
 import { useEffect, useReducer, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import ListGroup from "react-bootstrap/esm/ListGroup";
 import axios from "axios";
 import { Helmet } from "react-helmet-async";
@@ -51,6 +51,7 @@ function ProductScreen() {
   }, [slug]);
 
   const { state, dispatch: ctxDispatch } = useContext(Store);
+  const navigate = useNavigate();
   const { cart } = state;
   const addToCartHandler = async () => {
     const existItem = cart.cartItems.find((x) => x._id === product._id);
@@ -67,6 +68,7 @@ function ProductScreen() {
       type: "CART_ADD_ITEM",
       payload: { ...product, quantity },
     });
+    navigate("/cart");
   };
 
   return loading ? (
